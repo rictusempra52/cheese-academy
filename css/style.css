@@ -1,0 +1,358 @@
+/* ここから下に記載していく */
+body {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #222222;
+}
+
+
+/* ヘッダー */
+
+header {
+    /* top: 0;
+    position: fixed; */
+    width: 100%;
+    font-size: 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.menuitem {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    &:hover {
+        background-color: #222222;
+        color: white;
+    }
+}
+
+
+
+/* メインビジュアル */
+.mainvisual {
+    background-image: url(../img/mainbg.png);
+    background-size: cover;
+    height: 40%;
+}
+
+
+.title {
+    color: white;
+    text-align: center;
+    padding: 60px;
+}
+
+.title h1 {
+    font-size: 48px;
+    font-weight: bold;
+
+}
+
+.title p {
+    color: white;
+    margin-top: 60px;
+}
+
+/* メインコンテンツ */
+.content {
+    text-align: center;
+}
+
+.content section {
+    margin-bottom: 40px;
+}
+
+.content h1 {
+    font-weight: bold;
+    color: #ffd61a;
+    font-size: 24px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+
+}
+
+.content h2 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+
+.content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.slide-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 340px;
+    overflow: hidden;
+    flex-direction: row;
+}
+
+.slide-wrapper {
+    display: flex;
+    flex-direction: row;
+    animation: slide-flow 20s infinite linear 1s both;
+}
+
+.slide {
+    width: 300px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+@keyframes slide-flow {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.course-card {
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.course-card img {
+    width: 50%;
+    max-height: fit-content;
+}
+
+.course-description {
+    margin: 10px 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* news */
+.news-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.news-card {
+    width: 300px;
+
+}
+
+.news-description {
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 24px;
+
+}
+
+/* MOREボタン */
+.button-area {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    width: 300px;
+    height: 60px;
+    background: #ffd61a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+
+
+    &:hover {
+        &::before {
+            transform-origin: top right;
+            transform: skewX(-45deg) translateX(0);
+        }
+    }
+
+    &::before {
+        content: '';
+        width: 135%;
+        height: 100%;
+        background-color: purple;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform-origin: top left;
+        transform: skewX(-45deg) translateX(-100%);
+        transition: transform 0.5s ease;
+    }
+}
+
+.button-text {
+    font-size: 18px;
+    color: white;
+}
+
+.access iframe {
+    height: 400px;
+    width: 70%;
+}
+
+/* 会社情報 */
+.company-data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: left;
+
+}
+
+.company-data table td {
+    padding: 15px;
+}
+
+/* お問い合わせ */
+.table-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.table-area table {
+    width: 640px;
+}
+
+.table-area table td {
+    vertical-align: middle;
+    height: 36px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 64px;
+    border: solid 1px #bfbfbf;
+
+    &:first-child {
+        border-left: none;
+    }
+
+    &:last-child {
+        border-right: none;
+    }
+
+}
+
+textarea {
+    width: 100%;
+}
+
+.footer {
+    width: 100%;
+    margin-top: 140px;
+    background-color: #707070;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.copyright {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* レスポンシブデザイン */
+@media (max-width:900px) {
+    .content h2 {
+        margin-bottom: 30px;
+        /* スクリーン幅900px以下でh2の余白を調整 */
+    }
+
+    .Gslogo img {
+        width: 100%;
+        /* 画像の幅を100%に設定 */
+    }
+
+    .menuitem {
+        font-size: 10pt;
+        /* メニュー項目のフォントサイズを10ptに設定 */
+        font-weight: bold;
+        /* フォントを太字に設定 */
+    }
+
+    .course-card {
+        display: flex;
+        flex-direction: column;
+        border: 1pt solid #989898;
+    }
+
+    .course-card img {
+        width: 100%;
+    }
+
+    .course-description {
+        margin: 10px;
+        /* 上下左右に10pxの余白を設定 */
+    }
+
+    .news-cards {
+        flex-direction: column;
+        /* ニュースカードを縦に配置 */
+    }
+
+    .news-card {
+        width: 80%;
+        /* ニュースカードの幅を80%に設定 */
+    }
+
+    .news-pic img {
+        width: 100%;
+        /* 画像の幅を100%に設定 */
+        height: 100%;
+        /* 画像の高さを100%に設定 */
+        object-fit: cover;
+        /* 画像を全体にフィット */
+    }
+
+    .table-area table td {
+        padding: 10px;
+    }
+
+    .access iframe {
+        width: 100%;
+        /* iframeの幅を100%に設定 */
+    }
+
+}
+
+@media (min-width:900px) {
+    .course-card:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+}
